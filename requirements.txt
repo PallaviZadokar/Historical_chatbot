@@ -63,6 +63,7 @@ requests==2.32.3
 requests-toolbelt==1.0.0
 rich==13.9.4
 rpds-py==0.23.1
+sendgrid
 setuptools==76.0.0
 shellingham==1.5.4
 six==1.17.0
