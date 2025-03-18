@@ -22,8 +22,7 @@ groq_api_key = st.secrets["GROQ_API_KEY"]
 email_address = st.secrets["EMAIL_ADDRESS"]
 email_password = st.secrets["EMAIL_PASSWORD"]  
 
-if not email_address or not email_password or not gro
-q_api_key:
+if not email_address or not email_password or not groq_api_key:
     st.error("Error: Missing configuration values.")
     st.stop()
 
