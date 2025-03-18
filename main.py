@@ -18,17 +18,12 @@ torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__
 # Load NLP model
 nlp = spacy.load("en_core_web_trf")
 
-# Read configuration
-config = configparser.ConfigParser()
-config_path = os.path.join(os.getcwd(), ".streamlit", "config.ini")
-config.read(config_path)
-
-groq_api_key = config["SETTINGS"].get("GROQ_API_KEY")
-email_address = config["SETTINGS"].get("EMAIL_ADDRESS")
-email_password = config["SETTINGS"].get("EMAIL_PASSWORD")
+groq_api_key = st.secrets["GROQ_API_KEY"]
+email_address = st.secrets["EMAIL_ADDRESS"]
+email_password = st.secrets["EMAIL_PASSWORD"]
 
 if not email_address or not email_password or not groq_api_key:
-    st.error("Error: Missing configuration values. Check config.ini.")
+    st.error("Error: Missing configuration values.")
     st.stop()
 
 # Initialize LLM
