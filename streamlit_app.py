@@ -152,9 +152,12 @@ graph_builder.add_edge("verify_otp", END)
 graph = graph_builder.compile()
 
 # Streamlit UI
-st.title("Historical Monuments Chatbot")
-user_input = st.text_input("Hey, I am a historical chatbot! Tell me how I can help you regarding historical monument queries")
-
+def main():
+    st.title("Historical Monuments Chatbot")
+    user_input = st.text_input("Hey, I am a historical chatbot! Tell me how I can help you regarding historical monument queries")
+if __name__ == "__main__":
+    main()
+    
 if user_input:
     state = {"messages": [{"role": "user", "content": user_input}], "user_email": "", "otp_verified": False}
 
